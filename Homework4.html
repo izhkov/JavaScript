@@ -1,0 +1,31 @@
+<script>
+    
+   //Задание №1
+var number = prompt('Введите число');
+var obj = numToObj(number);
+
+if(obj == null) {
+    console.log('Введите число от 0 до 999');
+} else {
+    console.log(obj);
+};
+
+function numToObj(num) {
+    var arrNumber = num.split('');
+    while(arrNumber.length < 3) {
+        arrNumber.unshift(0);
+    };
+    var objNumber = {};
+    if(arrNumber.length > 3) {
+        return null;
+    } else {
+        objNumber['Сотни'] = +arrNumber[0];
+        objNumber['Десятки'] = +arrNumber[1];
+        objNumber['Единицы'] = +arrNumber[2];
+        return objNumber;
+    };
+};
+
+
+
+ </script>
